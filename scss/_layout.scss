@@ -1,0 +1,230 @@
+header {
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+  position: relative;
+  .logo-h {
+    text-align: center;
+    img {
+      max-width: 200px;
+    }
+  }
+}
+#menu_control {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+
+.menu_btn {
+  height: 57px;
+  width: 40px;
+  // background-color: yellow;
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  cursor: pointer;
+  span {
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    overflow: hidden;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 40px;
+    background-color: $deep-pink;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 12px 0px $deep-pink, 0px -12px 0px $deep-pink;
+  }
+}
+
+nav {
+  width: 100%;
+  // height: 180px;
+  // top: -180px;
+  height: 0;
+  background-color: rgba(241, 234, 234, 0.87);
+  position: absolute;
+  transition: 0.33s;
+  transition-timing-function: ease-in-out;
+  a {
+    opacity: 0;
+    display: block;
+    text-decoration: underline $light-green 3px;
+    font-size: $font-l;
+    color: $word-color;
+    font-weight: 550;
+    padding: 10px 40px;
+    // border-bottom: 3px solid $gray;
+    text-align: center;
+
+    transition-delay: 1s;
+    transition: 0.38s;
+  }
+}
+#menu_control:checked ~ header nav {
+  height: 180px;
+  a {
+    opacity: 100;
+  }
+}
+
+.footer-up {
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+}
+
+.logo-f {
+  padding: 10px 0px;
+  img {
+    width: 100%;
+  }
+}
+.contact {
+  padding: 10px 10px;
+  h3 {
+    font-size: $font-l;
+    font-weight: $title-weight;
+    color: $main-color;
+  }
+  div {
+    padding-top: 10px;
+    font-size: $font-s;
+    color: $word-color;
+  }
+}
+.follow {
+  h3 {
+    font-size: $font-l;
+    font-weight: $title-weight;
+    color: $main-color;
+    margin: 20px 0px 15px 0px;
+    padding: 0px 10px;
+  }
+}
+
+.icons {
+  text-align: center;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  display: inline;
+  cursor: pointer;
+}
+
+// 另一種寫法
+// .fb {
+//   display: inline-block;
+//   background-image: url("../img/1.png");
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   cursor: pointer;
+//   &:hover {
+//     background-image: url("../img/1-1.png");
+//   }
+// }
+
+.fb {
+  &:hover {
+    content: url("../img/1-1.png");
+  }
+}
+
+.ig {
+  &:hover {
+    content: url("../img/2-1.png");
+  }
+}
+
+.yt {
+  &:hover {
+    content: url("../img/3-1.png");
+  }
+}
+
+.pc {
+  &:hover {
+    content: url("../img/4-1.png");
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background-color: $main-color;
+  padding: 3px 0px;
+}
+
+/* 768px */
+@media screen and (min-width: 767px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu_btn {
+    display: none;
+  }
+  nav {
+    position: relative;
+    top: 0;
+    height: auto;
+    width: auto;
+    display: flex;
+    background-color: $background-color;
+
+    a {
+      opacity: 100;
+      font-size: $font-m;
+      font-weight: 550;
+      padding: 10px 10px;
+      text-decoration: none;
+      line-height: 40.141px;
+    }
+  }
+  .footer-up {
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo-f {
+    padding: 10px 0px;
+    width: 33.333%;
+    text-align: center;
+    img {
+      max-width: 300px;
+    }
+  }
+  .contact {
+    width: 33.333%;
+    text-align: center;
+  }
+  .follow {
+    width: 33.333%;
+    text-align: center;
+    h3 {
+      margin: 0px 0px;
+      padding: 10px 0px;
+    }
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* 1200px */
+@media screen and (min-width: 1200px) {
+}
